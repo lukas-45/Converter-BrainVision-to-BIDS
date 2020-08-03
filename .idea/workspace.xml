@@ -1,0 +1,631 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="8f4b135f-377e-4e13-b3fa-6a09752c467a" name="Default Changelist" comment="" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/gui.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="137">
+              <caret line="135" column="51" lean-forward="true" selection-start-line="135" selection-start-column="51" selection-end-line="135" selection-end-column="51" />
+              <folding>
+                <element signature="e#114#125#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/brain_vision_tests.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="136">
+              <caret line="14" column="8" selection-start-line="14" selection-start-column="8" selection-end-line="14" selection-end-column="8" />
+              <folding>
+                <element signature="e#0#15#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/metadata_transforrm_tests.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret selection-end-line="24" />
+              <folding>
+                <element signature="e#0#15#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python37-32/Lib/unittest/case.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="10217">
+              <caret line="614" selection-start-line="614" selection-end-line="614" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python37-32/Lib/unittest/loader.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="2431">
+              <caret line="153" selection-start-line="153" selection-end-line="153" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python37-32/Lib/shutil.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="4063">
+              <caret line="244" selection-start-line="244" selection-end-line="244" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/brain_vision_converter.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="176">
+              <caret line="15" column="7" selection-start-line="15" selection-start-column="7" selection-end-line="15" selection-end-column="7" />
+              <folding>
+                <element signature="e#182#191#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/mne_bids/tests/test_pick.py">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/progress_bar.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="799">
+              <caret line="48" column="23" selection-start-line="48" selection-start-column="23" selection-end-line="48" selection-end-column="23" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/metadata_transform.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="3519">
+              <caret line="211" selection-start-line="211" selection-end-line="211" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="UML Class" />
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>dir_name</find>
+      <find>xml</find>
+      <find>pisu</find>
+      <find>fast</find>
+      <find>copy</find>
+      <find>search</find>
+      <find>root</find>
+      <find>progres</find>
+      <find>progre</find>
+      <find>filen</find>
+      <find>choose</find>
+      <find>path not</find>
+      <find>read</find>
+      <find>read_txt</find>
+      <find>read_tx</find>
+      <find>S</find>
+      <find>tee</find>
+      <find>self.nor</find>
+      <find>read_xml</find>
+      <find>sea</find>
+      <find>nex</find>
+      <find>i</find>
+      <find>id_g</find>
+      <find>id_</find>
+      <find>sear</find>
+      <find>search_meta</find>
+      <find>eeg_vh</find>
+      <find>search_eeg</find>
+      <find>trans</find>
+      <find>copy_xml</find>
+    </findStrings>
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/bids_dataset/participants.tsv" />
+        <option value="$PROJECT_DIR$/output.tsv" />
+        <option value="$PROJECT_DIR$/XMLtoJSON.py" />
+        <option value="$PROJECT_DIR$/gui2.py" />
+        <option value="$PROJECT_DIR$/trasfer.py" />
+        <option value="$PROJECT_DIR$/pokus.py" />
+        <option value="$PROJECT_DIR$/Class_diagram.puml" />
+        <option value="$PROJECT_DIR$/metadataTransform.py" />
+        <option value="$PROJECT_DIR$/BrainVisionConverter.py" />
+        <option value="$PROJECT_DIR$/progressBar.py" />
+        <option value="$PROJECT_DIR$/progress_bar.py" />
+        <option value="$PROJECT_DIR$/metadata_transform.py" />
+        <option value="$PROJECT_DIR$/brain_vision_tests.py" />
+        <option value="$PROJECT_DIR$/metadata_transforrm_tests.py" />
+        <option value="$PROJECT_DIR$/test_gui.py" />
+        <option value="$PROJECT_DIR$/brain_vision_converter.py" />
+        <option value="$PROJECT_DIR$/gui.py" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="75" />
+    <option name="y" value="40" />
+    <option name="width" value="1750" />
+    <option name="height" value="980" />
+  </component>
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="BrainVisionToBids" type="b2602c69:ProjectViewProjectNode" />
+              <item name="BrainVisionToBids" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="BrainVisionToBids" type="b2602c69:ProjectViewProjectNode" />
+              <item name="BrainVisionToBids" type="462c0819:PsiDirectoryNode" />
+              <item name="mne_bids" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="BrainVisionToBids" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+            </path>
+            <path>
+              <item name="BrainVisionToBids" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="&lt; Python 3.7 (BrainVisionToBids) &gt;" type="70bed36:NamedLibraryElementNode" />
+            </path>
+            <path>
+              <item name="BrainVisionToBids" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="&lt; Python 3.7 (BrainVisionToBids) &gt;" type="70bed36:NamedLibraryElementNode" />
+              <item name="site-packages" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="BrainVisionToBids" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="&lt; Python 3.7 (BrainVisionToBids) &gt;" type="70bed36:NamedLibraryElementNode" />
+              <item name="site-packages" type="462c0819:PsiDirectoryNode" />
+              <item name="mne" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="BrainVisionToBids" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="&lt; Python 3.7 (BrainVisionToBids) &gt;" type="70bed36:NamedLibraryElementNode" />
+              <item name="site-packages" type="462c0819:PsiDirectoryNode" />
+              <item name="mne" type="462c0819:PsiDirectoryNode" />
+              <item name="channels" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="Scope" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DefaultPlantUmlFileTemplate" value="UML Class" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\lukas\PycharmProjects\BrainVisionToBids" />
+      <recent name="C:\Users\lukas\PycharmProjects\BrainVisionToBids\Testing\BrainVision" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\lukas\PycharmProjects\BrainVisionToBids\Testing" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="Python.gui">
+    <configuration name="gui" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="BrainVisionToBids" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/gui.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Unittests for metadata_transforrm_tests.MetadataTransformTests" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
+      <module name="BrainVisionToBids" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;metadata_transforrm_tests.MetadataTransformTests&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Unittests for metadata_transforrm_tests.MetadataTransformTests.test_create_data_source_directory" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
+      <module name="BrainVisionToBids" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;metadata_transforrm_tests.MetadataTransformTests.test_create_data_source_directory&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Unittests in brain_vision_tests.py" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
+      <module name="BrainVisionToBids" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;$PROJECT_DIR$/brain_vision_tests.py&quot;" />
+      <option name="_new_targetType" value="&quot;PATH&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Unittests in metadata_transforrm_tests.py" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
+      <module name="BrainVisionToBids" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;$PROJECT_DIR$/metadata_transforrm_tests.py&quot;" />
+      <option name="_new_targetType" value="&quot;PATH&quot;" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.gui" />
+        <item itemvalue="Python tests.Unittests in metadata_transforrm_tests.py" />
+        <item itemvalue="Python tests.Unittests for metadata_transforrm_tests.MetadataTransformTests.test_create_data_source_directory" />
+        <item itemvalue="Python tests.Unittests for metadata_transforrm_tests.MetadataTransformTests" />
+        <item itemvalue="Python tests.Unittests in brain_vision_tests.py" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="8f4b135f-377e-4e13-b3fa-6a09752c467a" name="Default Changelist" comment="" />
+      <created>1592241262383</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1592241262383</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="TestHistory">
+    <history-entry file="Unittests_in_metadata_transforrm_tests_py - 2020.08.02 at 09h 30m 09s.xml">
+      <configuration name="Unittests in metadata_transforrm_tests.py" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittests_in_metadata_transforrm_tests_py - 2020.08.02 at 09h 30m 18s.xml">
+      <configuration name="Unittests in metadata_transforrm_tests.py" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittests_in_metadata_transforrm_tests_py - 2020.08.02 at 09h 30m 22s.xml">
+      <configuration name="Unittests in metadata_transforrm_tests.py" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittests_in_metadata_transforrm_tests_py - 2020.08.02 at 09h 30m 27s.xml">
+      <configuration name="Unittests in metadata_transforrm_tests.py" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittests_in_metadata_transforrm_tests_py - 2020.08.02 at 09h 31m 13s.xml">
+      <configuration name="Unittests in metadata_transforrm_tests.py" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittests_in_metadata_transforrm_tests_py - 2020.08.02 at 09h 31m 26s.xml">
+      <configuration name="Unittests in metadata_transforrm_tests.py" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittests_in_metadata_transforrm_tests_py - 2020.08.02 at 09h 35m 06s.xml">
+      <configuration name="Unittests in metadata_transforrm_tests.py" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittests_in_metadata_transforrm_tests_py - 2020.08.02 at 09h 35m 32s.xml">
+      <configuration name="Unittests in metadata_transforrm_tests.py" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittests_in_metadata_transforrm_tests_py - 2020.08.02 at 09h 36m 14s.xml">
+      <configuration name="Unittests in metadata_transforrm_tests.py" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittests_in_metadata_transforrm_tests_py - 2020.08.02 at 09h 39m 16s.xml">
+      <configuration name="Unittests in metadata_transforrm_tests.py" configurationId="tests" />
+    </history-entry>
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
+    <editor active="true" />
+    <layout>
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4978903" visible="true" weight="0.21648793" />
+      <window_info id="Structure" order="1" sideWeight="0.5021097" side_tool="true" weight="0.22523117" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" sideWeight="0.49867898" weight="0.32956153" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.8512064" visible="true" weight="0.32956153" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.39886847" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Version Control" order="7" />
+      <window_info anchor="bottom" id="Terminal" order="8" />
+      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.14879356" side_tool="true" weight="0.32956153" />
+      <window_info anchor="bottom" id="Python Console" order="10" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="PlantUML" order="3" weight="0.3297587" />
+    </layout>
+    <layout-to-restore>
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4978903" visible="true" weight="0.20277411" />
+      <window_info id="Structure" order="1" sideWeight="0.5021097" side_tool="true" weight="0.22523117" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" sideWeight="0.49867898" weight="0.32956153" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.85270804" visible="true" weight="0.32956153" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.39886847" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Version Control" order="7" />
+      <window_info anchor="bottom" id="Terminal" order="8" />
+      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.14729194" side_tool="true" visible="true" weight="0.32956153" />
+      <window_info anchor="bottom" id="Python Console" order="10" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+    </layout-to-restore>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/brain_vision_tests.py</url>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/bids_dataset/sub-2/eeg/sub-2_eeg.json" />
+    <entry file="file://$PROJECT_DIR$/bids_dataset/sub-3/eeg/sub-3_eeg.json" />
+    <entry file="file://$PROJECT_DIR$/bids_dataset/sub-6/eeg/sub-6_channels.tsv" />
+    <entry file="file://$PROJECT_DIR$/bids_dataset/sub-6/eeg/sub-6_eeg.json" />
+    <entry file="file://$PROJECT_DIR$/bids_dataset/sub-64/eeg/sub-64_channels.tsv" />
+    <entry file="file://$PROJECT_DIR$/bids_dataset/sub-64/eeg/sub-64_eeg.json" />
+    <entry file="file://$PROJECT_DIR$/bids_dataset/sub-1/sub-1_scans.tsv" />
+    <entry file="file://$PROJECT_DIR$/bids_dataset/sub-1/eeg/sub-1_channels.tsv" />
+    <entry file="file://$PROJECT_DIR$/bids_dataset/sub-1/eeg/sub-1_events.tsv" />
+    <entry file="file://$PROJECT_DIR$/bids_dataset/sub-1/eeg/sub-1_eeg.json" />
+    <entry file="file://$PROJECT_DIR$/bids_dataset/participants.json" />
+    <entry file="file://$PROJECT_DIR$/bids_data/sub-132/eeg/sub-132_events.tsv" />
+    <entry file="file://$PROJECT_DIR$/bids_data/sub-130/eeg/sub-130_events.tsv" />
+    <entry file="file://$PROJECT_DIR$/bids_data/sub-130/eeg/sub-130_channels.tsv" />
+    <entry file="file://$PROJECT_DIR$/bids_dataset/participants.tsv" />
+    <entry file="file://$PROJECT_DIR$/bids_data/sub-132/eeg/sub-132_channels.tsv" />
+    <entry file="file://$PROJECT_DIR$/bids_data/participants.tsv" />
+    <entry file="file://$PROJECT_DIR$/dataset_pokus/participants.tsv" />
+    <entry file="file://$PROJECT_DIR$/Testing/dataset/sub-1/eeg/sub-1_channels.tsv">
+      <provider selected="true" editor-type-id="csv-text-editor" />
+      <provider editor-type-id="csv-table-editor">
+        <state showInfoPanel="true" fixedHeaders="false" rowLines="3" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Testing/dataset/sub-1/eeg/sub-1_events.tsv">
+      <provider selected="true" editor-type-id="csv-text-editor" />
+      <provider editor-type-id="csv-table-editor">
+        <state showInfoPanel="true" fixedHeaders="false" rowLines="3" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Testing/dataset/sub-1/eeg/sub-1_eeg.vmrk">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Testing/dataset/sub-1/eeg/sub-1_eeg.vhdr">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Testing/dataset/sub-1/eeg/sub-1_eeg.json">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Testing/dataset/participants.tsv">
+      <provider selected="true" editor-type-id="csv-text-editor" />
+      <provider editor-type-id="csv-table-editor">
+        <state showInfoPanel="true" fixedHeaders="false" rowLines="3" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Testing/dataset/sub-132/eeg/sub-132_channels.tsv">
+      <provider selected="true" editor-type-id="csv-text-editor" />
+      <provider editor-type-id="csv-table-editor">
+        <state showInfoPanel="true" fixedHeaders="false" rowLines="3" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Testing/dataset/sub-132/eeg/sub-132_eeg.json">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Testing/dataset/sub-132/eeg/sub-132_eeg.vhdr">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-673" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Testing/dataset/sub-132/eeg/sub-132_events.tsv">
+      <provider selected="true" editor-type-id="csv-text-editor" />
+      <provider editor-type-id="csv-table-editor">
+        <state showInfoPanel="true" fixedHeaders="false" rowLines="3" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Testing/dataset/sub-1/sub-1_scans.tsv">
+      <provider selected="true" editor-type-id="csv-text-editor" />
+      <provider editor-type-id="csv-table-editor">
+        <state showInfoPanel="true" fixedHeaders="false" rowLines="3" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/participants.tsv" />
+    <entry file="file://$PROJECT_DIR$/metadata.xml" />
+    <entry file="file://$PROJECT_DIR$/output.tsv" />
+    <entry file="file://$PROJECT_DIR$/pokus.py" />
+    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python37-32/Lib/tkinter/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="19941">
+          <caret line="1176" selection-start-line="1176" selection-end-line="1176" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mne_bids/write.py" />
+    <entry file="file://$PROJECT_DIR$/mne_bids/utils.py" />
+    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python37-32/Lib/genericpath.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="149">
+          <caret line="95" selection-start-line="95" selection-end-line="95" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Class_diagram.puml" />
+    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python37-32/Lib/threading.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="142">
+          <caret line="864" selection-start-line="864" selection-end-line="864" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test_gui.py" />
+    <entry file="file://$PROJECT_DIR$/mne/io/brainvision/brainvision.py" />
+    <entry file="file://$PROJECT_DIR$/metadata_transforrm_tests.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret selection-end-line="24" />
+          <folding>
+            <element signature="e#0#15#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python37-32/Lib/unittest/case.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="10217">
+          <caret line="614" selection-start-line="614" selection-end-line="614" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python37-32/Lib/unittest/loader.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2431">
+          <caret line="153" selection-start-line="153" selection-end-line="153" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python37-32/Lib/shutil.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4063">
+          <caret line="244" selection-start-line="244" selection-end-line="244" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/progress_bar.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="799">
+          <caret line="48" column="23" selection-start-line="48" selection-start-column="23" selection-end-line="48" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/metadata_transform.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3519">
+          <caret line="211" selection-start-line="211" selection-end-line="211" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mne_bids/tests/test_pick.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/brain_vision_converter.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="176">
+          <caret line="15" column="7" selection-start-line="15" selection-start-column="7" selection-end-line="15" selection-end-column="7" />
+          <folding>
+            <element signature="e#182#191#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/brain_vision_tests.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="14" column="8" selection-start-line="14" selection-start-column="8" selection-end-line="14" selection-end-column="8" />
+          <folding>
+            <element signature="e#0#15#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gui.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="137">
+          <caret line="135" column="51" lean-forward="true" selection-start-line="135" selection-start-column="51" selection-end-line="135" selection-end-column="51" />
+          <folding>
+            <element signature="e#114#125#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>
