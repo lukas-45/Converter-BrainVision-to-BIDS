@@ -155,44 +155,56 @@ class GUI(Frame):
         threading.Thread(target=self.transform_data).start()
 
     def transform_data(self):
-
-        if v.get() == 1:
-            metadata_transform.MetadataConvert().create_meta_data_file()
-        if v.get() == 2:
-            shutil.move(os.path.join(target_dir, 'participants.tsv'), os.path.join('./', 'participants.tsv'))
-
-        progress_bar.ProgressBar().start()
-        progress_step = float(100.0 / lb.size())
-        for i, listbox_entry in enumerate(lb.get(0, END)):
-            progress_bar.ProgressBar().update_progress(progress_step)
-            print(listbox_entry)
+        try:
             if v.get() == 1:
-                brain_vision_converter.BrainVisionConverter()\
-                    .transform_data_to_bids_call(listbox_entry,
-                                                 entry.get(), target_dir)
+                metadata_transform.MetadataConvert().create_meta_data_file()
+            if v.get() == 2:
+                shutil.move(os.path.join(target_dir, 'participants.tsv'), os.path.join('./', 'participants.tsv'))
+
+            progress_bar.ProgressBar().start()
+            progress_step = float(100.0 / lb.size())
+            for i, listbox_entry in enumerate(lb.get(0, END)):
+                progress_bar.ProgressBar().update_progress(progress_step)
+                print(listbox_entry)
+                if v.get() == 1:
+                    brain_vision_converter.BrainVisionConverter()\
+                        .transform_data_to_bids_call(listbox_entry,
+                                                     entry.get(), target_dir)
+                elif v.get() == 2:
+                    brain_vision_converter.BrainVisionConverter().\
+                        get_id(target_dir)
+                    brain_vision_converter.BrainVisionConverter().\
+                        transform_data_to_bids_call_experiment(listbox_entry,
+                                                               target_dir)
+
+            progress_bar.ProgressBar().exit_progress()
+            if v.get() == 1:
+                shutil.move(os.path.join('./', 'participants.tsv'),
+                            os.path.join(target_dir + '/' + entry.get(),
+                                         'participants.tsv'))
+
+                metadata_transform.MetadataConvert().read_xml_info(xml_files[0],
+                                                                   target_dir + '/' +
+                                                                   entry.get() +
+                                                                   '/dataset_description.json',
+                                                                   entry.get())
             elif v.get() == 2:
-                brain_vision_converter.BrainVisionConverter().\
-                    get_id(target_dir)
-                brain_vision_converter.BrainVisionConverter().\
-                    transform_data_to_bids_call_experiment(listbox_entry,
-                                                           target_dir)
+                shutil.move(os.path.join('./', 'participants.tsv'),
+                            os.path.join(target_dir, 'participants.tsv'))
 
-        progress_bar.ProgressBar().exit_progress()
-        if v.get() == 1:
-            shutil.move(os.path.join('./', 'participants.tsv'),
-                        os.path.join(target_dir + '/' + entry.get(),
-                                     'participants.tsv'))
-
-            metadata_transform.MetadataConvert().read_xml_info(xml_files[0],
-                                                               target_dir + '/' +
-                                                               entry.get() +
-                                                               '/dataset_description.json',
-                                                               entry.get())
-        elif v.get() == 2:
-            shutil.move(os.path.join('./', 'participants.tsv'),
-                        os.path.join(target_dir, 'participants.tsv'))
-
-        self.normal_buttons()
+            self.normal_buttons()
+        except ZeroDivisionError:
+            messagebox.showerror("error", "list is empty")
+            self.normal_buttons()
+        except FileNotFoundError:
+            messagebox.showerror("error", "path not found")
+            self.normal_buttons()
+        except NameError:
+            messagebox.showerror("error", "target is not defined")
+            self.normal_buttons()
+        except OSError:
+            messagebox.showerror("error", "dataset name is not valid")
+            self.normal_buttons()
 
     def clicked_choose(self):
         """
