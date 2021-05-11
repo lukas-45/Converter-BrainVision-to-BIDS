@@ -31,12 +31,13 @@ class BrainVisionConverter:
         res = IID
         return res
 
-    def transform_data_to_bids_call(self, directory, data_name, data_tar_name):
+    def transform_data_to_bids_call(self, directory, data_name, data_tar_name, xml_files):
         """
         transform data from BrainVision to BIDS format
         :param directory: BrainVision directory
         :param data_name: dataset name
         :param data_tar_name: name of target directory to save BIDS format
+        :param xml_files: list of metadata.xml
         """
         global IID
         idd = str(IID)
@@ -76,6 +77,9 @@ class BrainVisionConverter:
                                                                         + 'sub-' + idd
                                                                         + '_task-' + data_name
                                                                         + '_eeg.json')
+        else:
+            if len(xml_files) > IID-1:
+                metadata_transform.MetadataConvert.read_xml_file(xml_files[IID-1], idd)
         IID = self.next_id()
 
     def transform_data_to_bids_call_experiment(self, directory, data_tar_name):
@@ -96,7 +100,11 @@ class BrainVisionConverter:
         file_json = self.search_eeg_json(data_tar_name + '/sub-' + idd)
         self.update_json_file(file_json, data_name)
         file_txt = self.search_experiment_txt(directory)
-        metadata_transform.MetadataConvert().read_txt_file(file_txt[0], idd)
+        xml_file = self.search_metadata_xml(directory)
+        if len(file_txt) > 0:
+            metadata_transform.MetadataConvert().read_txt_file(file_txt[0], idd)
+        elif len(xml_file) > 0:
+            metadata_transform.MetadataConvert.read_xml_file(xml_file[0], idd)
         IID = self.next_id()
 
     @staticmethod

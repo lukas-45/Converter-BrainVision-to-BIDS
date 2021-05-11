@@ -4,7 +4,7 @@
 """
 Modul progress bar
 """
-from tkinter import Toplevel, Label, DoubleVar
+from tkinter import Toplevel, Label, DoubleVar, StringVar
 from tkinter.ttk import Progressbar
 
 
@@ -12,6 +12,7 @@ class ProgressBar:
     """
     The class that runs the progress bar
     """
+
     def start(self):
         """
         starts the progress bar
@@ -19,15 +20,20 @@ class ProgressBar:
         global popup
         global progress_var
         global progress
-        popup = Toplevel()
-        Label(popup, text="Files being converting").grid(row=0, column=0)
-        popup.geometry('100x100+100+450')
+        global percent
+        popup = Toplevel(bg='#2A6C93')
+        Label(popup, text="Files are being converted", bg='#2A6C93', font=('Georgia', 8), fg="white").grid(row=0,
+                                                                                                           columnspan=6)
+        popup.geometry('150x100+100+450')
+        percent = StringVar()
+        percent.set("0%")
         progress = 0
         progress_var = DoubleVar()
         progress_bar = Progressbar(popup, variable=progress_var, maximum=100)
-        progress_bar.grid(row=1, column=0)  # .pack(fill=tk.X, expand=1, side=tk.BOTTOM)
+        progress_bar.grid(row=2, columnspan=6)  # .pack(fill=tk.X, expand=1, side=tk.BOTTOM)
+        label_percent = Label(popup, textvariable=percent, bg='#2A6C93', font=('Georgia', 8), fg="white")
+        label_percent.grid(row=1, columnspan=6)
         self.center(popup)
-
         popup.pack_slaves()
 
     @staticmethod
@@ -40,6 +46,8 @@ class ProgressBar:
         global progress
         progress += progress_step
         progress_var.set(progress)
+        str_progress = '{:.0f}%'.format(progress)
+        percent.set(str_progress)
 
     @staticmethod
     def exit_progress():

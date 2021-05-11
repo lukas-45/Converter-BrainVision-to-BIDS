@@ -107,9 +107,52 @@ class MetadataConvert:
             tsv_writer.writerow(['participant_id', 'age', 'sex', 'hand'])
 
     @staticmethod
-    def read_txt_file(file_name, idd):
+    def read_xml_file(path, idd):
         """
         read metadata.xml and get sex, age and handedness participants
+        :param path: path to xml file
+        :param idd: id of experiment
+        """
+        global sex
+        global age
+        global handedness
+
+        tree = Etree.parse(path)
+        root = tree.getroot()
+        sex = 'N/A'
+        age = 'N/A'
+        handedness = 'N/A'
+        sections = root.findall('section')
+
+        for section in sections:
+            section_name = section.find('name')
+            if section_name.text == 'Subject':
+                properties = section.findall('property')
+                for prop in properties:
+                    names = prop.findall('name')
+                    for name in names:
+                        if name.text == "gender":
+                            value = prop.find('value')
+                            sex = value.text
+                            sex = sex.strip()
+                        elif name.text == "age":
+                            value = prop.find('value')
+                            age = value.text
+                            age = age.strip()
+
+        if sex == 'female':
+            sex = 'F'
+        elif sex == 'male':
+            sex = 'M'
+
+        with open('./participants.tsv', 'a', newline='') as out_file:
+            tsv_writer = csv.writer(out_file, delimiter='\t')
+            tsv_writer.writerow(['sub-'+idd, age, sex, handedness])
+
+    @staticmethod
+    def read_txt_file(file_name, idd):
+        """
+        read txt file and get sex, age and handedness participants
         :param file_name: path to xml file
         :param idd: id of experiment
         """

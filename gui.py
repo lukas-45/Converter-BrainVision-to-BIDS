@@ -9,12 +9,15 @@ import os
 import threading
 import shutil
 from tkinter import Tk, BOTH, W, N, E, S, Radiobutton, \
-    messagebox, Entry, Scrollbar, Listbox, END, IntVar
-from tkinter.ttk import Frame, Button, Label
+    messagebox, Entry, Scrollbar, Listbox, END, IntVar, StringVar
+from tkinter.ttk import Frame, Button, Label, Separator
 from tkinter import filedialog
 import brain_vision_converter
 import metadata_transform
 import progress_bar
+from tkinter import ttk
+import re
+import logging
 
 ID_GUI = 1
 
@@ -25,6 +28,8 @@ class GUI(Frame):
     """
     def __init__(self):
         super().__init__()
+        self.text = StringVar()
+        self.text.set("Dataset directory path")
         self.init_ui()
 
     def init_ui(self):
@@ -35,6 +40,7 @@ class GUI(Frame):
         global exp_dir_label
         global exp_tar_label
         global data_tar_label
+        global label_dir
         global lb
         global entry
 
@@ -53,29 +59,62 @@ class GUI(Frame):
         global clear_button
 
         self.master.title("LukkoBids")
+        self.master.configure(background='#094064')
         self.pack(fill=BOTH, expand=True)
 
         self.columnconfigure(2, weight=1)
         self.columnconfigure(3, pad=7)
-        self.rowconfigure(5, weight=1)
-        self.rowconfigure(6, pad=7)
+        self.rowconfigure(6, pad=10)
+        self.rowconfigure(7, weight=1)
+        self.rowconfigure(8, pad=8)
 
-        exp_dir_button = Button(self, text="Experiment directory", command=self.clicked_choose)
+        sep = Separator(self, orient="vertical")
+        sep1 = Separator(self, orient="vertical")
+        sep2 = Separator(self, orient="vertical")
+        sep3 = Separator(self, orient="vertical")
+        sep.grid(column=2, row=0, sticky="ns")
+        sep1.grid(column=2, row=1, sticky="ns")
+        sep2.grid(column=2, row=2, sticky="ns")
+        sep3.grid(column=2, row=3, sticky="ns")
+
+        seph = Separator(self, orient="horizontal")
+        sep1h = Separator(self, orient="horizontal")
+        sep2h = Separator(self, orient="horizontal")
+        sep3h = Separator(self, orient="horizontal")
+        sep4h = Separator(self, orient="horizontal")
+        seph.grid(column=0, row=4, sticky="ew")
+        sep1h.grid(column=1, row=4, sticky="ew")
+        sep2h.grid(column=2, row=4, sticky="ew")
+        sep3h.grid(column=3, row=4, sticky="ew")
+        sep4h.grid(column=4, row=4, sticky="ew")
+
+        style = ttk.Style()
+        style.theme_use('alt')
+        style.configure(self.master, background='#2A6C93')
+        style.configure('TButton', font=('Georgia', 8), background='#14577E', foreground='white')
+        style.map('TButton', background=[('active', '#437CA1')])
+        style.configure('TLabel', font=('Georgia', 8), foreground='white')
+
+        label_dir = Label(self, textvariable=self.text)
+
+        label_dir.grid(row=5, columnspan=6)
+
+        exp_dir_button = Button(self, text="Experiment input", command=self.clicked_choose, width=14)
         exp_dir_button.grid(row=2, column=3)
         exp_dir_label = Label(self, text="Experiment name")
         exp_dir_label.grid(row=2, column=4, padx=5)
 
-        exp_tar_button = Button(self, text="Experiment target", command=self.clicked_choose_target)
+        exp_tar_button = Button(self, text="Experiment output", command=self.clicked_choose_target, width=14)
         exp_tar_button.grid(row=3, column=3, pady=4)
         exp_tar_label = Label(self, text="Directory name")
         exp_tar_label.grid(row=3, column=4, padx=5)
 
-        data_dir_button = Button(self, text="Dataset directory", command=self.clicked_choose)
+        data_dir_button = Button(self, text="Dataset input", command=self.clicked_choose, width=11)
         data_dir_button.grid(row=2, column=0)
         data_dir_label = Label(self, text="Dataset name")
         data_dir_label.grid(row=2, column=1, padx=5)
 
-        data_tar_button = Button(self, text="Dataset target", command=self.clicked_choose_target)
+        data_tar_button = Button(self, text="Dataset output", command=self.clicked_choose_target, width=11)
         data_tar_button.grid(row=3, column=0, pady=4)
         data_tar_label = Label(self, text="Directory name")
         data_tar_label.grid(row=3, column=1)
@@ -86,14 +125,14 @@ class GUI(Frame):
         entry = Entry(self)
         entry.grid(row=1, column=1, pady=6)
 
-        transfer_button = Button(self, text="Transfer data", command=self.clicked_transfer)
-        transfer_button.grid(row=4, column=2, padx=5)
+        transfer_button = Button(self, text="Convert data", command=self.clicked_transfer, width=11)
+        transfer_button.grid(row=6, padx=5, columnspan=6)
 
         scrollbar = Scrollbar(self, orient="vertical")
         lb = Listbox(self, yscrollcommand=scrollbar.set)
         scrollbar.config(command=lb.yview)
 
-        lb.grid(row=5, column=0, columnspan=5, rowspan=1,
+        lb.grid(row=7, column=0, columnspan=5, rowspan=1,
                 padx=5, sticky=E+W+S+N)
 
         radiobutton_data = Radiobutton(self,
@@ -111,15 +150,19 @@ class GUI(Frame):
         radiobutton_data.grid(row=0, column=0)
         radiobutton_experiment.grid(row=0, column=3)
 
-        delete_button = Button(self, text="Delete", command=self.delete_item)
-        clear_button = Button(self, text="Clear", command=self.clear_list)
-        delete_button.grid(row=6, column=0)
-        clear_button.grid(row=6, column=4)
+        radiobutton_data.configure(font=('Georgia', 8), fg="white", bg='#2A6C93', activebackground='#2A6C93',
+                                   activeforeground="white", selectcolor='#2A6C93')
+        radiobutton_experiment.configure(font=('Georgia', 8), fg="white", bg='#2A6C93', activebackground='#2A6C93',
+                                         activeforeground="white", selectcolor='#2A6C93')
+
+        delete_button = Button(self, text="Clear exp", command=self.delete_item, width=11)
+        clear_button = Button(self, text="Clear all", command=self.clear_list, width=11)
+        delete_button.grid(row=8, column=0)
+        clear_button.grid(row=8, column=4)
 
         self.show_choice()
 
-    @staticmethod
-    def show_choice():
+    def show_choice(self):
         """
         sets the visibility of the buttons
          according to the radio buttons
@@ -129,11 +172,15 @@ class GUI(Frame):
             exp_tar_button.config(state="disable")
             data_dir_button.config(state="normal")
             data_tar_button.config(state="normal")
+            self.clear_list()
+            self.text.set("Directory dataset path")
         if v.get() == 2:
             exp_dir_button.config(state="normal")
             exp_tar_button.config(state="normal")
             data_dir_button.config(state="disable")
             data_tar_button.config(state="disable")
+            self.clear_list()
+            self.text.set("Directory experiment path")
         print(v.get())
 
     @staticmethod
@@ -165,16 +212,17 @@ class GUI(Frame):
             progress_step = float(100.0 / lb.size())
             for i, listbox_entry in enumerate(lb.get(0, END)):
                 progress_bar.ProgressBar().update_progress(progress_step)
-                print(listbox_entry)
                 if v.get() == 1:
+                    if i == 0:
+                        brain_vision_converter.IID = 1
                     brain_vision_converter.BrainVisionConverter()\
-                        .transform_data_to_bids_call(listbox_entry,
-                                                     entry.get(), target_dir)
+                        .transform_data_to_bids_call(label_dir.cget("text")+listbox_entry,
+                                                     entry.get(), target_dir, xml_files)
                 elif v.get() == 2:
                     brain_vision_converter.BrainVisionConverter().\
                         get_id(target_dir)
                     brain_vision_converter.BrainVisionConverter().\
-                        transform_data_to_bids_call_experiment(listbox_entry,
+                        transform_data_to_bids_call_experiment(label_dir.cget("text")+listbox_entry,
                                                                target_dir)
 
             progress_bar.ProgressBar().exit_progress()
@@ -193,17 +241,22 @@ class GUI(Frame):
                             os.path.join(target_dir, 'participants.tsv'))
 
             self.normal_buttons()
-        except ZeroDivisionError:
+            self.delete_path()
+        except ZeroDivisionError as err:
             messagebox.showerror("error", "list is empty")
+            logging.error(err)
             self.normal_buttons()
-        except FileNotFoundError:
+        except FileNotFoundError as err:
             messagebox.showerror("error", "path not found")
+            logging.error(err)
             self.normal_buttons()
-        except NameError:
+        except NameError as err:
             messagebox.showerror("error", "target is not defined")
+            logging.error(err)
             self.normal_buttons()
-        except OSError:
+        except OSError as err:
             messagebox.showerror("error", "dataset name is not valid")
+            logging.error(err)
             self.normal_buttons()
 
     def clicked_choose(self):
@@ -220,8 +273,9 @@ class GUI(Frame):
         """
         global ID_GUI
         global xml_files
-        folder_selected = filedialog.askdirectory()
 
+        folder_selected = filedialog.askdirectory()
+        self.clear_list()
         res = folder_selected
         try:
             xml_files = self.fast_scan(res)
@@ -229,8 +283,9 @@ class GUI(Frame):
                 data_dir_label.configure(text=os.path.basename(os.path.normpath(res)))
             elif v.get() == 2:
                 exp_dir_label.configure(text=os.path.basename(os.path.normpath(res)))
-        except FileNotFoundError:
+        except FileNotFoundError as err:
             messagebox.showerror("error", "path not found")
+            logging.error(err)
             self.normal_buttons()
         return 0
 
@@ -251,16 +306,20 @@ class GUI(Frame):
         elif v.get() == 2:
             exp_tar_label.configure(text=os.path.basename(os.path.normpath(res)))
 
-    @staticmethod
-    def fast_scan(dir_name):
+    def fast_scan(self, dir_name):
         """
         finds vhdr and xml files in BrainVision project
         :param dir_name: directory path
         :return: list of xml files
         """
+        dir_sub_sub = "name"
         files = []
         sub_folders = [f.path for f in os.scandir(dir_name) if f.is_dir()]
         print(sub_folders)
+        if len(sub_folders) > 0:
+            dir_sub_sub = os.path.dirname(sub_folders[0])
+            self.text.set(dir_sub_sub)
+            print(dir_sub_sub)
         for dir_sub in list(sub_folders):
             vhd_r_files = glob.glob(dir_sub + "/**/*.vhdr", recursive=True)
             xml_file = glob.glob(dir_sub + "/**/*.xml", recursive=True)
@@ -270,7 +329,9 @@ class GUI(Frame):
 
             if len(vhd_r_files) > 0:
                 for file_name in list(vhd_r_files):
-                    lb.insert("end", file_name)
+                    if not re.match("^(.*target?).vhdr", file_name):
+                        path = file_name.split(dir_sub_sub)
+                        lb.insert("end", path[1])
 
         print(files)
         return files
@@ -307,6 +368,24 @@ class GUI(Frame):
         radiobutton_experiment.config(state="disable")
         delete_button.config(state="disable")
         clear_button.config(state="disable")
+
+    def delete_path(self):
+        """
+        set paths to default value
+        """
+        if v.get() == 1:
+            self.clear_list()
+            self.text.set("Directory dataset path")
+        if v.get() == 2:
+            self.clear_list()
+            self.text.set("Directory experiment path")
+        exp_dir_label.config(text="Experiment name")
+
+        exp_tar_label.config(text="Directory name")
+
+        data_dir_label.config(text="Dataset name")
+
+        data_tar_label.config(text="Directory name")
 
     def normal_buttons(self):
         """
@@ -345,7 +424,13 @@ def main():
     """
     global root
     global v
+    global logger
+    logging.basicConfig(filename='errorBrainVisionToBids.log', level=logging.DEBUG,
+                        format='%(asctime)s %(levelname)s %(name)s %(message)s')
+    logger = logging.getLogger(__name__)
+
     root = Tk()
+
     v = IntVar()
     v.set(1)
     global example
@@ -353,7 +438,6 @@ def main():
     Label(root)
     root.geometry("750x600+300+300")
     example.center(root)
-
     root.mainloop()
 
 
