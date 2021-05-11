@@ -1,2 +1,2 @@
 # Converter-BrainVision-to-BIDS
-The tool converte BrainVision standard to BIDS
+The tool converts BrainVision standard to BIDS
