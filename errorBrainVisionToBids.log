@@ -32,3 +32,9 @@
 2021-05-11 20:09:12,725 ERROR root [WinError 3] Systém nemùže nalézt uvedenou cestu: 'C:/Users/lukas/Desktop/diplomka/data_po_roce/ahojahojahoj/sourcedata/metadata.xml' -> 'C:/Users/lukas/Desktop/diplomka/data_po_roce/ahojahojahoj/sourcedata/sub-00_task-ahojahojahoj_metadata.xml'
 2021-05-11 20:25:26,387 ERROR root float division by zero
 2021-05-11 21:23:05,610 ERROR root [Errno 9] Bad file descriptor
+2021-05-12 10:15:02,291 ERROR root [Errno 2] No such file or directory: 'C:/Users/lukas/Desktop/diplomka/data_po_roce/PROJECT_DAYS_P3_NUMBERS/sub-01/eeg/sub-01_task-PROJECT_DAYS_P3_NUMBERS_eeg.json'
+2021-05-12 10:19:12,251 ERROR root [Errno 2] No such file or directory: 'C:/Users/lukas/Desktop/diplomka/data_po_roce/PROJECT_DAYS_P3_NUMBERS/sub-01/eeg/sub-01_task-PROJECT_DAYS_P3_NUMBERS_eeg.json'
+2021-05-12 10:19:20,238 ERROR root float division by zero
+2021-05-12 10:19:29,420 ERROR root [Errno 2] No such file or directory: 'C:/Users/lukas/Desktop/diplomka/data_po_roce/PROJECT_DAYS_P3_NUMBE/sub-01/eeg/sub-01_task-PROJECT_DAYS_P3_NUMBE_eeg.json'
+2021-05-12 13:10:45,939 ERROR root [Errno 2] No such file or directory: 'C:/Users/lukas/Desktop/diplomka/data_po_roce/ahoj_cau/sub-01/eeg/sub-01_task-ahoj_cau_eeg.json'
+2021-05-12 13:18:02,606 ERROR root [Errno 2] No such file or directory: 'C:/Users/lukas/Desktop/diplomka/data_po_roce/aho_cjd/sub-01/eeg/sub-01_task-aho_cjd_eeg.json'

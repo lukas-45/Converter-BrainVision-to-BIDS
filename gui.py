@@ -203,6 +203,7 @@ class GUI(Frame):
 
     def transform_data(self):
         try:
+            print(entry.get())
             if v.get() == 1:
                 metadata_transform.MetadataConvert().create_meta_data_file()
             if v.get() == 2:

@@ -63,6 +63,7 @@ class BrainVisionConverter:
         print(directory)
         print("velikost je: " + str(len(file_metadata_xml)))
         print(IID)
+
         if len(file_metadata_xml) > 0:
             metadata_transform.MetadataConvert().copy_xml_file(file_metadata_xml[0],
                                                                data_tar_name + '/' + data_name +
@@ -71,15 +72,12 @@ class BrainVisionConverter:
         if len(file_txt) > 0:
             metadata_transform.MetadataConvert().read_txt_file(file_txt[0], idd)
             metadata_transform.MetadataConvert().read_xml_eeg_reference(file_metadata_xml[IID - 1],
-                                                                        data_tar_name + '/'
-                                                                        + data_name + '/'
-                                                                        + 'sub-' + idd + '/eeg/'
-                                                                        + 'sub-' + idd
-                                                                        + '_task-' + data_name
-                                                                        + '_eeg.json')
+                                                                        file_json[0])
         else:
             if len(xml_files) > IID-1:
                 metadata_transform.MetadataConvert.read_xml_file(xml_files[IID-1], idd)
+                metadata_transform.MetadataConvert().read_xml_eeg_reference(file_metadata_xml[IID - 1],
+                                                                            file_json[0])
         IID = self.next_id()
 
     def transform_data_to_bids_call_experiment(self, directory, data_tar_name):
