@@ -95,28 +95,28 @@ class GUI(Frame):
         style.map('TButton', background=[('active', '#437CA1')])
         style.configure('TLabel', font=('Georgia', 8), foreground='white')
 
-        label_dir = Label(self, textvariable=self.text)
+        label_dir = Label(self, textvariable=self.text, wraplength=550)
 
-        label_dir.grid(row=5, columnspan=6)
+        label_dir.grid(row=5, columnspan=5)
 
         exp_dir_button = Button(self, text="Experiment input", command=self.clicked_choose, width=14)
         exp_dir_button.grid(row=2, column=3)
-        exp_dir_label = Label(self, text="Experiment name")
+        exp_dir_label = Label(self, text="Original experiment location")
         exp_dir_label.grid(row=2, column=4, padx=5)
 
         exp_tar_button = Button(self, text="Experiment output", command=self.clicked_choose_target, width=14)
         exp_tar_button.grid(row=3, column=3, pady=4)
-        exp_tar_label = Label(self, text="Directory name")
+        exp_tar_label = Label(self, text="Converted experiment location")
         exp_tar_label.grid(row=3, column=4, padx=5)
 
         data_dir_button = Button(self, text="Dataset input", command=self.clicked_choose, width=11)
         data_dir_button.grid(row=2, column=0)
-        data_dir_label = Label(self, text="Dataset name")
+        data_dir_label = Label(self, text="Original dataset location")
         data_dir_label.grid(row=2, column=1, padx=5)
 
         data_tar_button = Button(self, text="Dataset output", command=self.clicked_choose_target, width=11)
         data_tar_button.grid(row=3, column=0, pady=4)
-        data_tar_label = Label(self, text="Directory name")
+        data_tar_label = Label(self, text="Converted dataset location")
         data_tar_label.grid(row=3, column=1)
 
         data_name_label = Label(self, text="Dataset name: ")
@@ -282,6 +282,8 @@ class GUI(Frame):
             xml_files = self.fast_scan(res)
             if v.get() == 1:
                 data_dir_label.configure(text=os.path.basename(os.path.normpath(res)))
+                if entry.get() == '':
+                    entry.insert(0, os.path.basename(os.path.normpath(res)))
             elif v.get() == 2:
                 exp_dir_label.configure(text=os.path.basename(os.path.normpath(res)))
         except FileNotFoundError as err:
@@ -380,13 +382,13 @@ class GUI(Frame):
         if v.get() == 2:
             self.clear_list()
             self.text.set("Directory experiment path")
-        exp_dir_label.config(text="Experiment name")
+        exp_dir_label.config(text="Original experiment location")
 
-        exp_tar_label.config(text="Directory name")
+        exp_tar_label.config(text="Converted experiment location")
 
-        data_dir_label.config(text="Dataset name")
+        data_dir_label.config(text="Original dataset location")
 
-        data_tar_label.config(text="Directory name")
+        data_tar_label.config(text="Converted dataset location")
 
     def normal_buttons(self):
         """
@@ -431,7 +433,6 @@ def main():
     logger = logging.getLogger(__name__)
 
     root = Tk()
-
     v = IntVar()
     v.set(1)
     global example
