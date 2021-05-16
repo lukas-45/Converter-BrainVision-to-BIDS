@@ -71,11 +71,13 @@ class BrainVisionConverter:
                                                                '_task-' + data_name)
         if len(file_txt) > 0:
             metadata_transform.MetadataConvert().read_txt_file(file_txt[0], idd)
+        if len(file_metadata_xml) > IID-1:
             metadata_transform.MetadataConvert().read_xml_eeg_reference(file_metadata_xml[IID - 1],
                                                                         file_json[0])
         else:
             if len(xml_files) > IID-1:
                 metadata_transform.MetadataConvert.read_xml_file(xml_files[IID-1], idd)
+            if len(file_metadata_xml) > IID - 1:
                 metadata_transform.MetadataConvert().read_xml_eeg_reference(file_metadata_xml[IID - 1],
                                                                             file_json[0])
         IID = self.next_id()
