@@ -58,6 +58,9 @@ class GUI(Frame):
         global delete_button
         global clear_button
 
+        global vhd_r_files
+        vhd_r_files = []
+
         self.master.title("LukkoBids")
         self.master.configure(background='#094064')
         self.pack(fill=BOTH, expand=True)
@@ -101,22 +104,22 @@ class GUI(Frame):
 
         exp_dir_button = Button(self, text="Experiment input", command=self.clicked_choose, width=14)
         exp_dir_button.grid(row=2, column=3)
-        exp_dir_label = Label(self, text="Original experiment location")
+        exp_dir_label = Label(self, text="Original experiment location", wraplength=200)
         exp_dir_label.grid(row=2, column=4, padx=5)
 
         exp_tar_button = Button(self, text="Experiment output", command=self.clicked_choose_target, width=14)
         exp_tar_button.grid(row=3, column=3, pady=4)
-        exp_tar_label = Label(self, text="Converted experiment location")
+        exp_tar_label = Label(self, text="Converted experiment location", wraplength=200)
         exp_tar_label.grid(row=3, column=4, padx=5)
 
         data_dir_button = Button(self, text="Dataset input", command=self.clicked_choose, width=11)
         data_dir_button.grid(row=2, column=0)
-        data_dir_label = Label(self, text="Original dataset location")
+        data_dir_label = Label(self, text="Original dataset location", wraplength=200)
         data_dir_label.grid(row=2, column=1, padx=5)
 
         data_tar_button = Button(self, text="Dataset output", command=self.clicked_choose_target, width=11)
         data_tar_button.grid(row=3, column=0, pady=4)
-        data_tar_label = Label(self, text="Converted dataset location")
+        data_tar_label = Label(self, text="Converted dataset location", wraplength=200)
         data_tar_label.grid(row=3, column=1)
 
         data_name_label = Label(self, text="Dataset name: ")
@@ -202,6 +205,7 @@ class GUI(Frame):
         threading.Thread(target=self.transform_data).start()
 
     def transform_data(self):
+        index = 0
         try:
             print(entry.get())
             if v.get() == 1:
@@ -211,20 +215,21 @@ class GUI(Frame):
 
             progress_bar.ProgressBar().start()
             progress_step = float(100.0 / lb.size())
-            for i, listbox_entry in enumerate(lb.get(0, END)):
+            for vhd_r_file in list(vhd_r_files):
                 progress_bar.ProgressBar().update_progress(progress_step)
                 if v.get() == 1:
-                    if i == 0:
+                    if index == 0:
                         brain_vision_converter.IID = 1
                     brain_vision_converter.BrainVisionConverter()\
-                        .transform_data_to_bids_call(label_dir.cget("text")+listbox_entry,
+                        .transform_data_to_bids_call(vhd_r_file,
                                                      entry.get(), target_dir, xml_files)
                 elif v.get() == 2:
                     brain_vision_converter.BrainVisionConverter().\
                         get_id(target_dir)
                     brain_vision_converter.BrainVisionConverter().\
-                        transform_data_to_bids_call_experiment(label_dir.cget("text")+listbox_entry,
+                        transform_data_to_bids_call_experiment(vhd_r_file,
                                                                target_dir)
+                index = index+1
 
             progress_bar.ProgressBar().exit_progress()
             if v.get() == 1:
@@ -316,6 +321,8 @@ class GUI(Frame):
         :return: list of xml files
         """
         dir_sub_sub = "name"
+        global vhd_r_files
+        vhd_r_files = []
         files = []
         sub_folders = [f.path for f in os.scandir(dir_name) if f.is_dir()]
         print(sub_folders)
@@ -324,17 +331,21 @@ class GUI(Frame):
             self.text.set(dir_sub_sub)
             print(dir_sub_sub)
         for dir_sub in list(sub_folders):
-            vhd_r_files = glob.glob(dir_sub + "/**/*.vhdr", recursive=True)
+            vhd_r_file = glob.glob(dir_sub + "/**/*.vhdr", recursive=True)
             xml_file = glob.glob(dir_sub + "/**/*.xml", recursive=True)
 
             if len(xml_file) > 0:
                 files = files + xml_file
 
-            if len(vhd_r_files) > 0:
-                for file_name in list(vhd_r_files):
+            if len(vhd_r_file) > 0:
+                vhd_r_files = vhd_r_files + vhd_r_file
+                for file_name in list(vhd_r_file):
                     if not re.match("^(.*target?).vhdr", file_name):
-                        path = file_name.split(dir_sub_sub)
-                        lb.insert("end", path[1])
+                        if v.get() == 1:
+                            path = os.path.basename(os.path.normpath(dir_sub))
+                        else:
+                            path = os.path.basename(os.path.normpath(dir_sub_sub))
+                        lb.insert("end", path)
 
         print(files)
         return files
@@ -345,6 +356,7 @@ class GUI(Frame):
         deletes the entire list
         """
         lb.delete('0', 'end')
+        vhd_r_files.clear()
 
     @staticmethod
     def delete_item():
@@ -354,7 +366,10 @@ class GUI(Frame):
         selection = lb.curselection()
         if not selection or len(selection) < 1:
             return
+        del vhd_r_files[selection[0]]
+        print(vhd_r_files)
         lb.delete(selection[0])
+
 
     @staticmethod
     def disable_buttons():
