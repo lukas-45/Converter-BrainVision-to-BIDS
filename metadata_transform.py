@@ -74,13 +74,11 @@ class MetadataConvert:
                                 value_surname = value.text
                                 value_surname = value_surname.strip()
                                 surname_list.append(value_surname)
-                                print(value_surname)
                             elif name.text == "givenname":
                                 value = prop.find('value')
                                 value_name = value.text
                                 value_name = value_name.strip()
                                 name_list.append(value_name)
-                                print(value_name)
         if len(surname_list) == len(name_list):
             i = 0
             while i < len(surname_list):
@@ -206,8 +204,6 @@ class MetadataConvert:
 
         a_file.close()
 
-        print(json_object)
-
         json_object["Name"] = task_name
         json_object["Authors"] = authors
 
@@ -232,7 +228,6 @@ class MetadataConvert:
 
         a_file.close()
 
-        print(json_object)
         if eeg_cap:
             json_object["EEGReference"] = "cap reference"
         else:

@@ -38,3 +38,19 @@
 2021-05-12 10:19:29,420 ERROR root [Errno 2] No such file or directory: 'C:/Users/lukas/Desktop/diplomka/data_po_roce/PROJECT_DAYS_P3_NUMBE/sub-01/eeg/sub-01_task-PROJECT_DAYS_P3_NUMBE_eeg.json'
 2021-05-12 13:10:45,939 ERROR root [Errno 2] No such file or directory: 'C:/Users/lukas/Desktop/diplomka/data_po_roce/ahoj_cau/sub-01/eeg/sub-01_task-ahoj_cau_eeg.json'
 2021-05-12 13:18:02,606 ERROR root [Errno 2] No such file or directory: 'C:/Users/lukas/Desktop/diplomka/data_po_roce/aho_cjd/sub-01/eeg/sub-01_task-aho_cjd_eeg.json'
+2021-05-16 16:01:47,622 ERROR root [WinError 3] Systém nemùže nalézt uvedenou cestu: ''
+2021-05-16 16:09:34,029 ERROR root [WinError 3] Systém nemùže nalézt uvedenou cestu: ''
+2021-05-16 16:13:39,259 ERROR root float division by zero
+2021-05-17 21:58:30,892 ERROR root [Errno 2] No such file or directory: 'C:\\Users\\lukas\\Downloads\\PROJECT_DAYS_P3_NUMBERS_ROZBALENA-20210514T184007Z-001\\PROJECT_DAYS_P3_NUMBERS_ROZBALENAC:\\Users\\lukas\\Downloads\\PROJECT_DAYS_P3_NUMBERS_ROZBALENA-20210514T184007Z-001\\PROJECT_DAYS_P3_NUMBERS_ROZBALENA\\Experiment_731_P3_Numbers\\Data\\P3Numbers_20150526_m_14_006.vhdr'
+2021-05-17 22:02:45,097 ERROR root "sub-01" already exists in the participant list. Please set overwrite to True.
+2021-05-17 23:10:11,139 ERROR root float division by zero
+2021-05-17 23:16:10,923 ERROR root name 'target_dir' is not defined
+2021-05-18 16:54:43,495 ERROR root float division by zero
+2021-05-18 17:03:48,389 ERROR root float division by zero
+2021-05-19 09:10:18,988 ERROR root float division by zero
+2021-05-19 09:10:31,879 ERROR root [WinError 3] Systém nemùže nalézt uvedenou cestu: ''
+2021-05-19 09:10:55,921 ERROR root [Errno 2] No such file or directory: 'C:/Users/lukas/Desktop/diplomka/data_po_roce/oijokasdf\\participants.tsv'
+2021-05-19 09:12:04,509 ERROR root [WinError 3] Systém nemùže nalézt uvedenou cestu: ''
+2021-05-19 09:13:22,255 ERROR root float division by zero
+2021-05-19 09:58:12,094 ERROR root "sub-01" already exists in the participant list. Please set overwrite to True.
+2021-05-19 09:58:33,184 ERROR root [WinError 3] Systém nemùže nalézt uvedenou cestu: ''

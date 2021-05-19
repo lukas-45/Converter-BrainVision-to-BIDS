@@ -9,7 +9,7 @@ import os
 import threading
 import shutil
 from tkinter import Tk, BOTH, W, N, E, S, Radiobutton, \
-    messagebox, Entry, Scrollbar, Listbox, END, IntVar, StringVar
+    messagebox, Entry, Scrollbar, Listbox, IntVar, StringVar
 from tkinter.ttk import Frame, Button, Label, Separator
 from tkinter import filedialog
 import brain_vision_converter
@@ -102,7 +102,7 @@ class GUI(Frame):
 
         label_dir.grid(row=5, columnspan=5)
 
-        exp_dir_button = Button(self, text="Experiment input", command=self.clicked_choose, width=14)
+        exp_dir_button = Button(self, text="Experiment input", command=self.clicked_choose_input, width=14)
         exp_dir_button.grid(row=2, column=3)
         exp_dir_label = Label(self, text="Original experiment location", wraplength=200)
         exp_dir_label.grid(row=2, column=4, padx=5)
@@ -112,7 +112,7 @@ class GUI(Frame):
         exp_tar_label = Label(self, text="Converted experiment location", wraplength=200)
         exp_tar_label.grid(row=3, column=4, padx=5)
 
-        data_dir_button = Button(self, text="Dataset input", command=self.clicked_choose, width=11)
+        data_dir_button = Button(self, text="Dataset input", command=self.clicked_choose_input, width=11)
         data_dir_button.grid(row=2, column=0)
         data_dir_label = Label(self, text="Original dataset location", wraplength=200)
         data_dir_label.grid(row=2, column=1, padx=5)
@@ -128,7 +128,7 @@ class GUI(Frame):
         entry = Entry(self)
         entry.grid(row=1, column=1, pady=6)
 
-        transfer_button = Button(self, text="Convert data", command=self.clicked_transfer, width=11)
+        transfer_button = Button(self, text="Convert data", command=self.clicked_conversion_button, width=11)
         transfer_button.grid(row=6, padx=5, columnspan=6)
 
         scrollbar = Scrollbar(self, orient="vertical")
@@ -145,11 +145,12 @@ class GUI(Frame):
                                        command=self.show_choice,
                                        value=1)
         radiobutton_experiment = Radiobutton(self,
-                                             text="ADD experiment",
+                                             text="ADD experiment to existing dataset",
                                              padx=20,
                                              variable=v,
                                              command=self.show_choice,
-                                             value=2)
+                                             value=2,
+                                             wraplength=105)
         radiobutton_data.grid(row=0, column=0)
         radiobutton_experiment.grid(row=0, column=3)
 
@@ -184,7 +185,6 @@ class GUI(Frame):
             data_tar_button.config(state="disable")
             self.clear_list()
             self.text.set("Directory experiment path")
-        print(v.get())
 
     @staticmethod
     def next_id():
@@ -196,22 +196,21 @@ class GUI(Frame):
         res = ID_GUI
         return res
 
-    def clicked_transfer(self):
+    def clicked_conversion_button(self):
         """
         disable buttons and then start new thread
         which start transform data
         """
         self.disable_buttons()
-        threading.Thread(target=self.transform_data).start()
+        threading.Thread(target=self.get_conversion_data).start()
 
-    def transform_data(self):
+    def get_conversion_data(self):
         index = 0
         try:
-            print(entry.get())
             if v.get() == 1:
                 metadata_transform.MetadataConvert().create_meta_data_file()
             if v.get() == 2:
-                shutil.move(os.path.join(target_dir, 'participants.tsv'), os.path.join('./', 'participants.tsv'))
+                shutil.copy(os.path.join(target_dir, 'participants.tsv'), os.path.join('./', 'participants.tsv'))
 
             progress_bar.ProgressBar().start()
             progress_step = float(100.0 / lb.size())
@@ -221,14 +220,14 @@ class GUI(Frame):
                     if index == 0:
                         brain_vision_converter.IID = 1
                     brain_vision_converter.BrainVisionConverter()\
-                        .transform_data_to_bids_call(vhd_r_file,
-                                                     entry.get(), target_dir, xml_files)
+                        .convert_data_to_bids(vhd_r_file,
+                                              entry.get(), target_dir, xml_files)
                 elif v.get() == 2:
                     brain_vision_converter.BrainVisionConverter().\
                         get_id(target_dir)
                     brain_vision_converter.BrainVisionConverter().\
-                        transform_data_to_bids_call_experiment(vhd_r_file,
-                                                               target_dir)
+                        convert_data_to_bids_experiment(vhd_r_file,
+                                                        target_dir)
                 index = index+1
 
             progress_bar.ProgressBar().exit_progress()
@@ -236,12 +235,12 @@ class GUI(Frame):
                 shutil.move(os.path.join('./', 'participants.tsv'),
                             os.path.join(target_dir + '/' + entry.get(),
                                          'participants.tsv'))
-
-                metadata_transform.MetadataConvert().read_xml_info(xml_files[0],
-                                                                   target_dir + '/' +
-                                                                   entry.get() +
-                                                                   '/dataset_description.json',
-                                                                   entry.get())
+                if len(xml_files) > 0:
+                    metadata_transform.MetadataConvert().read_xml_info(xml_files[0],
+                                                                       target_dir + '/' +
+                                                                       entry.get() +
+                                                                       '/dataset_description.json',
+                                                                       entry.get())
             elif v.get() == 2:
                 shutil.move(os.path.join('./', 'participants.tsv'),
                             os.path.join(target_dir, 'participants.tsv'))
@@ -265,7 +264,7 @@ class GUI(Frame):
             logging.error(err)
             self.normal_buttons()
 
-    def clicked_choose(self):
+    def clicked_choose_input(self):
         """
         create new thread
         and start the choose method
@@ -325,11 +324,9 @@ class GUI(Frame):
         vhd_r_files = []
         files = []
         sub_folders = [f.path for f in os.scandir(dir_name) if f.is_dir()]
-        print(sub_folders)
         if len(sub_folders) > 0:
             dir_sub_sub = os.path.dirname(sub_folders[0])
             self.text.set(dir_sub_sub)
-            print(dir_sub_sub)
         for dir_sub in list(sub_folders):
             vhd_r_file = glob.glob(dir_sub + "/**/*.vhdr", recursive=True)
             xml_file = glob.glob(dir_sub + "/**/*.xml", recursive=True)
@@ -347,7 +344,6 @@ class GUI(Frame):
                             path = os.path.basename(os.path.normpath(dir_sub_sub))
                         lb.insert("end", path)
 
-        print(files)
         return files
 
     @staticmethod
@@ -367,9 +363,7 @@ class GUI(Frame):
         if not selection or len(selection) < 1:
             return
         del vhd_r_files[selection[0]]
-        print(vhd_r_files)
         lb.delete(selection[0])
-
 
     @staticmethod
     def disable_buttons():

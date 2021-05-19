@@ -31,7 +31,7 @@ class BrainVisionConverter:
         res = IID
         return res
 
-    def transform_data_to_bids_call(self, directory, data_name, data_tar_name, xml_files):
+    def convert_data_to_bids(self, directory, data_name, data_tar_name, xml_files):
         """
         transform data from BrainVision to BIDS format
         :param directory: BrainVision directory
@@ -60,9 +60,6 @@ class BrainVisionConverter:
 
         file_txt = self.search_experiment_txt(directory)
         file_metadata_xml = self.search_metadata_xml(directory)
-        print(directory)
-        print("velikost je: " + str(len(file_metadata_xml)))
-        print(IID)
 
         if len(file_metadata_xml) > 0:
             metadata_transform.MetadataConvert().copy_xml_file(file_metadata_xml[0],
@@ -82,7 +79,7 @@ class BrainVisionConverter:
                                                                             file_json[0])
         IID = self.next_id()
 
-    def transform_data_to_bids_call_experiment(self, directory, data_tar_name):
+    def convert_data_to_bids_experiment(self, directory, data_tar_name):
         """
         transform data (one experiment) from BrainVision to BIDS format
         :param directory: BrainVision directory
@@ -169,8 +166,6 @@ class BrainVisionConverter:
         json_object = json.load(a_file)
 
         a_file.close()
-
-        print(json_object)
 
         json_object["TaskName"] = task_name
         json_object["PowerLineFrequency"] = 50
