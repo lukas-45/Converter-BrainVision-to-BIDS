@@ -335,9 +335,9 @@ class GUI(Frame):
                 files = files + xml_file
 
             if len(vhd_r_file) > 0:
-                vhd_r_files = vhd_r_files + vhd_r_file
                 for file_name in list(vhd_r_file):
                     if not re.match("^(.*target?).vhdr", file_name):
+                        vhd_r_files.append(file_name)
                         if v.get() == 1:
                             path = os.path.basename(os.path.normpath(dir_sub))
                         else:
